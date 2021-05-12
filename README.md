@@ -1,13 +1,16 @@
 # Vim-IDE
 
-It is my Vim configuration.
+This is my Vim configuration.
 
-Files from this repository must be placed in `~/.vim`.
+To install launch `install.sh` script with root permissions.
 
-## List of plugins
+```bash
+sudo ./install.sh
+```
 
-* [Cscope](http://cscope.sourceforge.net/)
+This one install [Git](https://git-scm.com/) and [Cscope](http://cscope.sourceforge.net/) if required and copy config files to `$HOME/.vim` directory.
 
-	Cscope must be installed on the system.
-
-	
+To define directory to install you can use `-d` or `--directory`. For example:
+```bash
+sudo ./install.sh -d ./custom/directory
+```
