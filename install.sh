@@ -1,6 +1,9 @@
 #!/bin/bash
 
 VIM_DIRECTORY="$HOME/.vim"
+SWAP_DIRECTORY=".swap"
+CHROMIUM_VIM_DIRECTORY="chromium-vim"
+MOJOM_VIM_PATH="mojom/syntax/mojom.vim"
 KOTLIN_VIM_REPO="https://github.com/udalov/kotlin-vim.git"
 
 function _install_if_needed {
@@ -63,5 +66,11 @@ then
 else
   git clone $KOTLIN_VIM_REPO $VIM_DIRECTORY/pack/plugins/start/kotlin-vim
 fi
+
+echo "Download mojom highlighting..."
+mkdir $SWAP_DIRECTORY
+git clone https://chromium.googlesource.com/chromium/src/tools/vim/ $SWAP_DIRECTORY/$CHROMIUM_VIM_DIRECTORY
+cp $SWAP_DIRECTORY/$CHROMIUM_VIM_DIRECTORY/$MOJOM_VIM_PATH $VIM_DIRECTORY/plugin
+rm -r $SWAP_DIRECTORY
 
 echo "Installation finished."
