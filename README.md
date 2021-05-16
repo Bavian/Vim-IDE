@@ -18,6 +18,7 @@ sudo ./install.sh -d ./custom/directory
 Plugins:
 * [kotlin-vim](https://github.com/udalov/kotlin-vim)
 * [cscope-mappings](http://cscope.sourceforge.net/cscope_vim_tutorial.html)
+* [Mojo highliting](https://chromium.googlesource.com/chromium/src/tools/vim/+/refs/heads/main/mojom/syntax/mojom.vim)
 
 Required packages:
 * [Git](https://git-scm.com/)
