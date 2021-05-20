@@ -21,6 +21,7 @@ Plugins:
 * [Mojo highliting](https://chromium.googlesource.com/chromium/src/tools/vim/+/refs/heads/main/mojom/syntax/mojom.vim)
 
 Required packages:
+* [Vim](https://www.vim.org/)
 * [Git](https://git-scm.com/)
 * [Cscope](http://cscope.sourceforge.net/)
 * [Wget](https://www.gnu.org/software/wget/)

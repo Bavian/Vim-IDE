@@ -7,12 +7,8 @@ MOJOM_VIM_PATH="mojom/syntax/mojom.vim"
 KOTLIN_VIM_REPO="https://github.com/udalov/kotlin-vim.git"
 
 function _install_if_needed {
-  if [ command -v $1 &> /dev/null ]
-  then
-    echo "$1 isn't installed. Install."
-    sudo apt-get install $1 -y
-  fi
-  echo "$1 is installed. Continue."
+  echo "Install $1..."
+  sudo apt-get install $1 -y &> /dev/null
 }
 
 # Reading arguents and set up script.
@@ -34,6 +30,7 @@ done
 
 # Install required packages
 sudo apt-get update -y
+_install_if_needed "vim"
 _install_if_needed "git"
 _install_if_needed "cscope"
 _install_if_needed "wget"
@@ -71,6 +68,6 @@ echo "Download mojom highlighting..."
 mkdir $SWAP_DIRECTORY
 git clone https://chromium.googlesource.com/chromium/src/tools/vim/ $SWAP_DIRECTORY/$CHROMIUM_VIM_DIRECTORY
 cp $SWAP_DIRECTORY/$CHROMIUM_VIM_DIRECTORY/$MOJOM_VIM_PATH $VIM_DIRECTORY/plugin
-rm -r $SWAP_DIRECTORY
+rm -fr $SWAP_DIRECTORY
 
 echo "Installation finished."
