@@ -61,3 +61,6 @@ set expandtab
 " Indents exceptions equal to 2.
 autocmd FileType java call SetIndentsCount(4)
 autocmd FileType kt call SetIndentsCount(4)
+
+" Force use tabs in make files
+autocmd FileType make setlocal noexpandtab
