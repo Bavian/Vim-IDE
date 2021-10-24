@@ -57,20 +57,26 @@ echo "Download cscope mappings..."
 wget -P $VIM_DIRECTORY/plugin http://cscope.sourceforge.net/cscope_maps.vim
 
 # Install "kotlin_vim".
+echo "Install kotlin-vim"
 if [ -d $VIM_DIRECTORY/pack/plugins/start/kotlin-vim ]
 then
+  echo "Kotlin-vim is already installed, updating repository..."
   git --git-dir $VIM_DIRECTORY/pack/plugins/start/kotlin-vim/.git fetch &&\
   git --git-dir $VIM_DIRECTORY/pack/plugins/start/kotlin-vim/.git pull
 else
+  echo "Cloning repository..."
   git clone $KOTLIN_VIM_REPO $VIM_DIRECTORY/pack/plugins/start/kotlin-vim
 fi
 
 # Install "Vim GO"
+echo "Install vim-go"
 if [ -d $VIM_DIRECTORY/pack/plugins/start/vim-go ]
 then
+  echo "Vim-go is already installed, updating repository..."
   git --git-dir $VIM_DIRECTORY/pack/plugins/start/vim-go/.git fetch &&\
   git --git-dir $VIM_DIRECTORY/pack/plugins/start/vim-go/.git pull
 else
+  echo "Cloning vim-go"
   git clone $VIM_GO_REPO $VIM_DIRECTORY/pack/plugins/start/vim-go
 fi
 
