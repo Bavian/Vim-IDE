@@ -5,6 +5,7 @@ SWAP_DIRECTORY=".swap"
 CHROMIUM_VIM_DIRECTORY="chromium-vim"
 MOJOM_VIM_PATH="mojom/syntax/mojom.vim"
 KOTLIN_VIM_REPO="https://github.com/udalov/kotlin-vim.git"
+VIM_GO_REPO="https://github.com/fatih/vim-go.git"
 
 function _install_if_needed {
   echo "Install $1..."
@@ -62,6 +63,15 @@ then
   git --git-dir $VIM_DIRECTORY/pack/plugins/start/kotlin-vim/.git pull
 else
   git clone $KOTLIN_VIM_REPO $VIM_DIRECTORY/pack/plugins/start/kotlin-vim
+fi
+
+# Install "Vim GO"
+if [ -d $VIM_DIRECTORY/pack/plugins/start/vim-go ]
+then
+  git --git-dir $VIM_DIRECTORY/pack/plugins/start/vim-go/.git fetch &&\
+  git --git-dir $VIM_DIRECTORY/pack/plugins/start/vim-go/.git pull
+else
+  git clone $VIM_GO_REPO $VIM_DIRECTORY/pack/plugins/start/vim-go
 fi
 
 echo "Download mojom highlighting..."
