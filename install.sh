@@ -69,6 +69,7 @@ else
 fi
 
 # Install "Vim GO"
+# TODO: Do something with :GoInstallBinaries(vim -c opens vim)
 echo "Install vim-go"
 if [ -d $VIM_DIRECTORY/pack/plugins/start/vim-go ]
 then
